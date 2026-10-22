@@ -40,6 +40,8 @@ the [versioned assets](https://github.com/Wiswof/RenormCell/releases/tag/v1.0.0)
 SHA256 for every file, and generates predictions. It **never submits anything** or
 requests VCC/GitHub credentials. Official controls must be obtained by the user under
 the competition's current access rules; they are not redistributed here.
+Code v1.0.1 improves pip bootstrapping and CPU numerical portability; the frozen
+v1.0.0 weight/statistics archives are unchanged. Use the current code release.
 
 Input directory:
 
@@ -81,6 +83,8 @@ raw control population + measured historical target responses + ESM2 target feat
 ```
 
 The official-best recipe applies `q20/q0` to the scaffold's **actual** two moments.
+K448 is legacy engineered count shaping (up to448 genes), including a fixed library
+depth multiplier; it is not a network width or a learned cell distribution.
 The candidate then centers `log(q100/q0)` across the full panel and adjusts only raw
 bulk. Its normalized mean emerges from the generated counts; it is not independently
 forced to an incompatible second target. Original convergence/feasibility guards

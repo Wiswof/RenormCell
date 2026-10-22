@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "renormcell"
-version = "1.0.0"
+version = "1.0.1"
 description = "Source-conditioned gene programs for perturbation response and raw-count generation"
 requires-python = ">=3.12,<3.13"
 license = "MIT"

@@ -12,6 +12,13 @@
   [training_recipes.json](data/training_recipes.json).
 - Recipe: exact AtlasShift/K448 scaffold, then original dual-moment `q20/q0`
   count reconstruction, correction strength1.0; no reused Flow/AE/PIE weights.
+- K448 is **engineered count shaping**, not a neural width: up to448 genes ranked
+  by absolute log-fold change among control-mean-CPM>5 genes; frozen
+  `flip_direction=True`, strength0.1, dual-moment balancing. Its library multiplier
+  is `max(1, floor(1_000_000 / max(template_depth)))`. It preserves the two
+  probability moments and these **scaled** per-cell depths, not the original
+  control library-size distribution. Metric utility is not evidence of realistic
+  biological covariance/dropout structure.
 - Historical submitted prediction SHA256:
   `488c99d2e42019b031ade10b45c5215b24089fe9f142a70a7ecc43e8c841b149`.
   The portable writer may serialize rows/HDF5 differently; compare aligned counts,

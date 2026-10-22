@@ -11,7 +11,7 @@
       ],
       "targets_per_context": 300,
       "probability_weights_base_bit_exact": true,
-      "seconds": 2.1743155317381024
+      "seconds": 2.165607886388898
     },
     {
       "model": "protected20",
@@ -22,7 +22,7 @@
       ],
       "targets_per_context": 300,
       "probability_weights_base_bit_exact": true,
-      "seconds": 1.3334930138662457
+      "seconds": 1.3465592451393604
     },
     {
       "model": "gene0",
@@ -33,7 +33,7 @@
       ],
       "targets_per_context": 300,
       "probability_weights_base_bit_exact": true,
-      "seconds": 2.5667515238747
+      "seconds": 2.5766160362400115
     },
     {
       "model": "gene100",
@@ -44,11 +44,37 @@
       ],
       "targets_per_context": 300,
       "probability_weights_base_bit_exact": true,
-      "seconds": 2.2167124920524657
+      "seconds": 2.2489743190817535
     }
   ],
   "raw_counts_regression": {
     "candidate_D_ABCC1_400_cells_bit_exact": true,
-    "official_best_A_ABCD1_400_cells_bit_exact": true
+    "official_best_A_ABCD1_400_cells_bit_exact": true,
+    "scope": "One actual400 group per profile, not all900 conditions"
+  },
+  "fresh_deployment": {
+    "public_unauthenticated_clone": true,
+    "isolated_python312_environment": true,
+    "public_release_archives_downloaded_and_all_file_sha256_verified": true,
+    "no_research_package_imports": true,
+    "user_supplied_official_controls_not_redistributed": true,
+    "CPU": "FP32 network; float64 probability-sum normalization; not CUDA bit parity",
+    "records": [
+      {
+        "profile": "official-best",
+        "cells": 400,
+        "genes": 18533,
+        "full_panel_queried": 300,
+        "integer_counts_and_depths_checked": true
+      },
+      {
+        "profile": "final-candidate",
+        "cells": 400,
+        "genes": 18533,
+        "full_panel_queried": 300,
+        "integer_counts_and_depths_checked": true
+      }
+    ],
+    "docker_execution": "Not tested: Docker daemon unavailable"
   }
 }
