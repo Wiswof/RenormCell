@@ -14,6 +14,38 @@ It also extends the Atlas scaffold with qualified K562 evidence for new targets;
 the neural priors remain exactly those used during training. These two releases do
 **not** use our earlier Flow, autoencoder or PIE experiments.
 
+## Results
+
+### Recorded official validation results
+
+Atlas+K448 **0.15884545** -> `official-best` **0.15924897** (**+0.00040352**).
+Both use the same official validation panel and anchor version. These are
+**normalized competition credits**, all higher-is-better—not the raw local metrics.
+The final candidate has no official final score and is not shown as a zero.
+
+![Official validation six-metric credits: Atlas+K448 vs official-best](results/official_six_credits.png)
+
+### Local six-metric comparisons: both released recipes and the fixed baseline
+
+All plots use actual **400-cell** integer predictions, the same reference/control
+panel per context, and cell-eval2 **0.16.0**. Error bars are **95% target bootstrap**
+(2,000 paired resamples, one generation seed; PDS panel ranks held fixed).
+H1: 35 targets; KOLF: 189; DLD-1: 43. Finite-target counts are printed per metric.
+MSE and NMAE are lower-is-better; the other four metrics are higher-is-better.
+
+![H1 six raw metrics, all three recipes with uncertainty](results/h1_six_metrics.png)
+
+![KOLF six raw metrics, all three recipes with uncertainty](results/kolf_six_metrics.png)
+
+![DLD-1 six raw metrics, all three recipes with uncertainty](results/dld_six_metrics.png)
+
+These are repeatedly exposed **local development** panels, not an independent test
+or the official anonymous final contexts. The candidate does not win every metric
+or context: KOLF/DLD Jaccard deteriorates. SDK-MSE improvements do not establish
+better direct raw-bulk error. The final-only new-target scaffold extension is not
+validated by these historical panels. See [results and CSVs](results/README.md)
+for exact values, uncertainty, provenance and a CPU-only plotting command.
+
 ## One-command deployment
 
 Linux, Python **3.12**, approximately 6 GB free disk for downloaded/extracted assets,

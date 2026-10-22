@@ -15,6 +15,9 @@ dynamic = ["dependencies"]
 [project.scripts]
 renormcell = "renormcell.predict:main"
 
+[project.optional-dependencies]
+plots = ["matplotlib==3.11.2"]
+
 [tool.setuptools]
 packages = ["renormcell"]
 

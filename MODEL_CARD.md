@@ -1,5 +1,10 @@
 # Frozen models
 
+Plots: [recorded official six-metric credits](results/official_six_credits.png),
+[H1](results/h1_six_metrics.png), [KOLF](results/kolf_six_metrics.png),
+[DLD-1](results/dld_six_metrics.png). Raw values, intervals and plotting code are
+documented in [results/README.md](results/README.md).
+
 ## official-best
 
 - Official VCC 2026 validation score: **0.1592489705417653**.

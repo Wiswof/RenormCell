@@ -1,0 +1,89 @@
+{
+  "sdk": "cell-eval2 0.16.0",
+  "cells_per_target": 400,
+  "generation_seed": 20261017,
+  "records": [
+    {
+      "scope": "h1",
+      "profile": "Atlas+K448",
+      "targets": 35,
+      "original_per_target_sha256": "e2b74fc33ff1d24f781d0cb3db4e097d7c2b805ac437ca5382ad3a45c486c819",
+      "original_aggregate_sha256": "1c9bed80812c617ec61e7c37079ad2621eb27a23582e7a0d15c0929bd105a6cf"
+    },
+    {
+      "scope": "h1",
+      "profile": "official-best",
+      "targets": 35,
+      "original_per_target_sha256": "be9d637e9901b93789901ac3d5ed7528bb57784d3791ad510c42f66cb9176e59",
+      "original_aggregate_sha256": "fe059c88dbf5cda8446a9694826cadf4045834fed1b7843f2bab57677584bcba"
+    },
+    {
+      "scope": "h1",
+      "profile": "final-candidate",
+      "targets": 35,
+      "original_per_target_sha256": "a5344e9f9a64bfb12893ce1749e15d9337a39541cb3cdad82d42d6fdf6e493e6",
+      "original_aggregate_sha256": "af9c2ea9e8e9e77a5fbc4ba4265187a683f169c612e126d7530acdf3583028d6"
+    },
+    {
+      "scope": "kolf",
+      "profile": "Atlas+K448",
+      "targets": 189,
+      "original_per_target_sha256": "32ae3c18114c871dfb858d411de774636177b18297f6102b5137a61801202a96",
+      "original_aggregate_sha256": "591db8f02b7f5e6a65a12e63bff87df8c5ac6950b32e040b14539ce85f4de0ac"
+    },
+    {
+      "scope": "kolf",
+      "profile": "official-best",
+      "targets": 189,
+      "original_per_target_sha256": "b195a9950382892c994422930708acae05f3ef4274e2d8111a9b700f64a10bfc",
+      "original_aggregate_sha256": "196e6860151495335d873b614ebabcfa4fd9cc3bf8e6574fc74f2cdb454e9923"
+    },
+    {
+      "scope": "kolf",
+      "profile": "final-candidate",
+      "targets": 189,
+      "original_per_target_sha256": "e0108011deaa27f5be40ef54644cedff097ed8b1d2048bc117b2657626d5f0d1",
+      "original_aggregate_sha256": "0cf80e4e5774c27400263a78bba4ddf5b7c0d4638955642f515ee997d512aaab"
+    },
+    {
+      "scope": "dld",
+      "profile": "Atlas+K448",
+      "targets": 43,
+      "original_per_target_sha256": "9134923294689c9bc99cbebb4aa5ad17e34bac06189262790dd4638a80b2e774",
+      "original_aggregate_sha256": "d5dccaafc51a2fd97fb3310493b150d38da00600050cd47516039e7307ca1bb0"
+    },
+    {
+      "scope": "dld",
+      "profile": "official-best",
+      "targets": 43,
+      "original_per_target_sha256": "0c9a7e2816d523e6ad87f58c7f50a0d10a5cdcb72251c2281f597383b5080f40",
+      "original_aggregate_sha256": "3b2b88b86cfb95831b9d5245fa97af22a54a2cf2a14ae49d499ea6d3365ee1c7"
+    },
+    {
+      "scope": "dld",
+      "profile": "final-candidate",
+      "targets": 43,
+      "original_per_target_sha256": "49059f26624c7bcd364b71d3427c0180a6aee07ecd1d2274f158d89ac1093f10",
+      "original_aggregate_sha256": "cee87376b829e5072a59d8ea30aff903765dc24ed2c6a5520585d5e0d029599e"
+    }
+  ],
+  "official_comparison_sha256": "590f852dacff24459df36cb17b0e814cbc9b0c1b66d919dfe22a8a7304c962dd",
+  "official_panel": "vcc2026-val-1",
+  "official_anchor": "vcc2026-valA-r4+vcc2026-valB-r4+vcc2026-valC-r4",
+  "official_scores": {
+    "Atlas_K448": 0.15884544993318364,
+    "official_best": 0.1592489705417653,
+    "final_candidate": null
+  },
+  "limitations": [
+    "Local H1 guide holdout, KOLF same-study cell holdout, DLD source-isolated scoring panel; repeatedly exposed development, not an independent test.",
+    "Single generation seed. Bootstrap conditions on targets and existing PDS ranks, not seed/cell-line uncertainty.",
+    "Local readout evaluation does not validate the anonymous final D/E/F contexts or new-target K562 scaffold extension.",
+    "SDK-MSE credit can reflect prediction-variance deduction; direct bulk error is not established to improve."
+  ],
+  "exported_files": {
+    "official_validation.csv": "794c2e2725a4daf87b5c8feaed019af4c19ffecec6714c1cd3e1e04788b469f5",
+    "local_aggregates.csv": "9df1cfd44ba0fb01fc7932a196b7b2b7d2b08df62043c7f6e149d0281af0c053",
+    "per_target_metrics.csv": "5761e786e13edc113bf7c581372151853700adf07290cafa3da5913da37618e9"
+  }
+}
