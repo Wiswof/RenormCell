@@ -17,6 +17,7 @@ def main():
     if args.file_index is None:
         for i,r in enumerate(rows): print(i,r.get('filename',''),r.get('bytes','unknown size'),r['url'])
         return
+    if not 0<=args.file_index<len(rows): raise ValueError('Invalid publisher file index')
     row=rows[args.file_index]
     from urllib.parse import urlparse,unquote
     name=row.get('filename') or Path(unquote(urlparse(row['url']).path)).name

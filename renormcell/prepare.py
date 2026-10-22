@@ -26,11 +26,20 @@ def prepare(path, genes, output):
         if a.obs[key].dtype.kind!='b': raise ValueError(f'{key} must be explicit author-curated booleans')
     a=a[a.obs.quality_pass].copy()
     if not len(a): raise ValueError('No retained cells')
+    if a.obs[['study','cell_line','context','target_gene','guide']].astype(str).apply(
+            lambda col: col.str.strip().eq('').any()).any(): raise ValueError('Empty curated label')
+    calls=a.obs.groupby(['study','context','guide'],observed=True)[['target_gene','is_control']].nunique()
+    if (calls>1).any().any(): raise ValueError('Conflicting guide-to-target/control labels within a context')
     raw=sparse.csr_matrix(a.X,dtype=np.float64)
     if not np.isfinite(raw.data).all() or (raw.data<0).any() or not np.equal(raw.data,np.floor(raw.data)).all():
         raise ValueError('X must be integer RNA counts, not log-normalized or imputed expression')
     # Missing measured genes are zero-padded but remain FALSE in the mask, never observed zeros.
     present=pd.Index(a.var_names).get_indexer(genes); mask=present>=0
+    if 'measured' in a.var:
+        if a.var['measured'].dtype.kind!='b': raise ValueError('var.measured must be boolean')
+        source_mask=a.var['measured'].to_numpy()
+        if raw[:,~source_mask].nnz: raise ValueError('Nonzero count in a gene declared unmeasured')
+        mask[mask] &= source_mask[present[mask]]
     if not mask.any(): raise ValueError('No shared genes')
     coo=raw[:,present[mask]].tocoo()
     x=sparse.csr_matrix((coo.data,(coo.row,np.flatnonzero(mask)[coo.col])),shape=(len(a),len(genes)))

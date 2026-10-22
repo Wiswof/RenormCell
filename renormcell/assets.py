@@ -15,6 +15,7 @@ MANIFEST = DATA/'assets.json'
 def download(url, path, expected):
     path = Path(path); path.parent.mkdir(parents=True,exist_ok=True)
     if path.exists() and expected and digest(path)==expected: return
+    if path.exists() and not expected: raise FileExistsError('Existing unpinned download; inspect it before replacing')
     part = path.with_name(path.name+'.part')
     start = part.stat().st_size if part.exists() else 0
     headers = {'User-Agent':'RenormCell/1.0'}
