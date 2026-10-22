@@ -1,0 +1,54 @@
+{
+  "cuda": "NVIDIA A100 80GB",
+  "torch": "2.11.0+cu128",
+  "records": [
+    {
+      "model": "protected0",
+      "contexts": [
+        "D",
+        "E",
+        "F"
+      ],
+      "targets_per_context": 300,
+      "probability_weights_base_bit_exact": true,
+      "seconds": 2.1743155317381024
+    },
+    {
+      "model": "protected20",
+      "contexts": [
+        "D",
+        "E",
+        "F"
+      ],
+      "targets_per_context": 300,
+      "probability_weights_base_bit_exact": true,
+      "seconds": 1.3334930138662457
+    },
+    {
+      "model": "gene0",
+      "contexts": [
+        "D",
+        "E",
+        "F"
+      ],
+      "targets_per_context": 300,
+      "probability_weights_base_bit_exact": true,
+      "seconds": 2.5667515238747
+    },
+    {
+      "model": "gene100",
+      "contexts": [
+        "D",
+        "E",
+        "F"
+      ],
+      "targets_per_context": 300,
+      "probability_weights_base_bit_exact": true,
+      "seconds": 2.2167124920524657
+    }
+  ],
+  "raw_counts_regression": {
+    "candidate_D_ABCC1_400_cells_bit_exact": true,
+    "official_best_A_ABCD1_400_cells_bit_exact": true
+  }
+}

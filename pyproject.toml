@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "renormcell"
+version = "1.0.0"
+description = "Source-conditioned gene programs for perturbation response and raw-count generation"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+license-files = ["LICENSE", "licenses/*"]
+readme = "README.md"
+dynamic = ["dependencies"]
+
+[project.scripts]
+renormcell = "renormcell.predict:main"
+
+[tool.setuptools]
+packages = ["renormcell"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.data-files]
+"share/renormcell" = ["data/assets.json", "data/raw_downloads.json", "data/sources.csv", "data/training_recipes.json"]

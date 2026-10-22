@@ -1,0 +1,31 @@
+{
+  "release": "v1.0.0",
+  "files_sha256": "e2c57d0716a76fb80009bc41bb97526c3af159af1af4a0e33ab3c9850cdec689",
+  "uncompressed_bytes": 2203730192,
+  "archives": [
+    {
+      "name": "atlas.tar.gz",
+      "url": "https://github.com/Wiswof/RenormCell/releases/download/v1.0.0/atlas.tar.gz",
+      "bytes": 247209303,
+      "sha256": "346f69424256febbf67b123a95c3f3c2d36366f9cf0e27d040ec940865d48113"
+    },
+    {
+      "name": "weights.tar.gz",
+      "url": "https://github.com/Wiswof/RenormCell/releases/download/v1.0.0/weights.tar.gz",
+      "bytes": 265562208,
+      "sha256": "4daed438f6867364a79f1cc7c77fcce703e60aeb4898e19abc35441e7c5d93be"
+    },
+    {
+      "name": "protected.tar.gz",
+      "url": "https://github.com/Wiswof/RenormCell/releases/download/v1.0.0/protected.tar.gz",
+      "bytes": 384502562,
+      "sha256": "08e9f8a840b42eb8d249f66e1950be32f76d94674d20dfb6592e983b9240e941"
+    },
+    {
+      "name": "gene.tar.gz",
+      "url": "https://github.com/Wiswof/RenormCell/releases/download/v1.0.0/gene.tar.gz",
+      "bytes": 420066485,
+      "sha256": "c6c76d1b9d3a470334cba0f8f310789ab9b91e429c6ddaffe204432c92005e50"
+    }
+  ]
+}

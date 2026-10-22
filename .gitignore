@@ -1,0 +1,17 @@
+.venv/
+.assets/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+runs/
+*.h5ad
+*.pt
+*.npz
+*.npy
+*.part
+.env
+*TOKEN*
+*credentials*

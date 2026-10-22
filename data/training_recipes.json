@@ -1,0 +1,43 @@
+[
+  {
+    "protocol": "fresh_qualified_all_study_gene_program_mixer_v1",
+    "seed": 20261017,
+    "world": 8,
+    "batch_per_rank": 1024,
+    "nominal_global_group_batch": 8192,
+    "passes": 20,
+    "updates_per_pass": 638,
+    "updates": 12760,
+    "TRAIN_groups": 5224705,
+    "TRAIN_cells": 29680402,
+    "source_experts": 60248,
+    "loss": "0.5 weighted complete-axis mean CE + 0.5 weighted complete-axis raw-bulk CE",
+    "sampling": "Full-group coverage pass with async CPU batch shuffle and existing capped line/context/target loss weights",
+    "intentional_sampling_measure_version": "Pseudobulk full passes + bounded hierarchy weights; NOT uniform cell draws or exactly equal line frequency",
+    "optimizer": "AdamW lr5e-4 wd.01 clip1; linear one-pass warmup from10% then constant",
+    "precision": "Resident float32 dual probabilities decoded from exact integer CSR and exact float32 mean labels; BF16 network/FP32 probability",
+    "model": "Shared fresh parent initialization + zero-initialized rank32 gene-dependent source scores; two statistics separate",
+    "maximum_source_studies_per_query": 10
+  },
+  {
+    "protocol": "fresh_pooled_gene_program_source_value_v1",
+    "seed": 20261017,
+    "world": 8,
+    "batch_per_rank": 1024,
+    "nominal_global_group_batch": 8192,
+    "passes": 100,
+    "updates_per_pass": 638,
+    "updates": 63800,
+    "TRAIN_groups": 5224705,
+    "TRAIN_cells": 29680402,
+    "source_experts": 81579,
+    "loss": "0.5 meanCE + 0.5 bulkCE + fixed TRAIN-calibrated coefficient * bulk-log-MSE",
+    "bulk_log_coefficient": 0.2853516127573863,
+    "sampling": "Full-group coverage pass with async CPU batch shuffle and existing capped line/context/target loss weights",
+    "intentional_sampling_measure_version": "Pseudobulk full passes + bounded hierarchy weights; NOT uniform cell draws or exactly equal line frequency",
+    "optimizer": "AdamW lr5e-4 wd.01 clip1; linear one-pass warmup from10% then constant",
+    "precision": "Resident float32 dual probabilities decoded from exact integer CSR and exact float32 mean labels; BF16 network/FP32 probability",
+    "model": "64 learned gene programs modulate signed per-source gene gates; plus64-program residual; independent mean/bulk heads",
+    "maximum_source_studies_per_query": 10
+  }
+]
