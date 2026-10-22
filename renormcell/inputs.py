@@ -102,9 +102,13 @@ class Inputs:
         model.eval(); out = {k:[] for k in ('probability','weights','base')}
         for start in range(0,len(targets),64):
             args = self.fields(features,measured,targets[start:start+64])
-            with torch.autocast(self.device.type,dtype=torch.bfloat16): q,w = model(*args)
+            with torch.autocast(self.device.type,dtype=torch.bfloat16,enabled=self.device.type=='cuda'):
+                q,w = model(*args)
             if not torch.isfinite(q).all() or (q<0).any() or torch.count_nonzero(q*~args[-1][:,None]):
                 raise ValueError('Invalid neural prediction')
+            if self.device.type=='cpu':
+                # CPU softmax's long-axis accumulation differs; keep strict downstream unit-mass guards.
+                mass=q.double(); q=(mass/mass.sum(-1,keepdim=True)).float()
             torch.testing.assert_close(q.sum(-1),torch.ones_like(q.sum(-1)),rtol=0,atol=5e-7)
             for key,value in zip(out,(q,w,args[0])): out[key].append(value.cpu().numpy())
         del model

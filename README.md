@@ -19,7 +19,8 @@ the neural priors remain exactly those used during training. These two releases 
 Linux, Python **3.12**, approximately 6 GB free disk for downloaded/extracted assets,
 32 GB system RAM recommended. One NVIDIA GPU is enough for neural inference; the
 count emitter is CPU-bound. Tested on an A100 80 GB with PyTorch 2.11.0 + CUDA 12.8.
-CPU fallback is supported but is slower and is not claimed bit-identical to CUDA.
+CPU fallback uses FP32 with a float64 probability-sum normalization; it is slower
+and is not claimed bit-identical to the frozen CUDA/BF16 inference path.
 The first installation additionally downloads PyTorch and dependencies.
 
 ```bash
